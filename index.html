@@ -3,24 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Site</title>
+  <title>Meu Site Responsivo</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
+      background-color: #f4f4f4;
       color: #333;
     }
 
     header {
-      background: #20232a;
+      background-color: #20232a;
       color: white;
-      padding: 20px;
+      padding: 20px 10px;
       text-align: center;
     }
 
     nav {
-      background: #61dafb;
+      background-color: #61dafb;
       padding: 10px;
       text-align: center;
     }
@@ -39,26 +43,43 @@
     main {
       max-width: 800px;
       margin: 40px auto;
+      padding: 0 20px;
       text-align: center;
     }
 
     img {
       max-width: 100%;
       height: auto;
-      margin: 20px 0;
+      margin-top: 20px;
     }
 
     footer {
       margin-top: 60px;
       padding: 20px;
       text-align: center;
-      background: #ddd;
+      background-color: #ddd;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      header h1 {
+        font-size: 24px;
+      }
+
+      main p {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Bem-vindo ao Meu Site!</h1>
+    <h1>Bem-vindo ao Meu Site Responsivo!</h1>
   </header>
 
   <nav>
@@ -68,12 +89,13 @@
   </nav>
 
   <main>
-    <p>Esse site está sendo hospedado gratuitamente por dog@cachorroroludo.com.br</p>
-    <img src="imagens/cachorro.png" alt="Um cachorro feliz">
+    <p>Este site se adapta a qualquer tamanho de tela! 📱💻</p>
+    <img src="imagens/cachorro.png" alt="Cachorro fofo">
   </main>
 
   <footer>
     &copy; 2025 Meu Site. Todos os direitos reservados.
   </footer>
+
 </body>
 </html>
