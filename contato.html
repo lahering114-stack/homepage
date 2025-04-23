@@ -1,12 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contato</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      padding: 30px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #61dafb;
+      color: #20232a;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #21a1f1;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-link a {
+      color: #20232a;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <h1>Fale conosco</h1>
-  <p>Você pode me encontrar por e-mail dog@cachorroroludo.com.br</p>
-  <a href="index.html">Voltar para a página inicial</a>
+
+  <h1>Entre em Contato</h1>
+
+  <form action="https://formsubmit.co/dog@cachorroroludo.com.br" method="POST">
+    <input type="text" name="nome" placeholder="Seu nome" required>
+    <input type="email" name="email" placeholder="Seu e-mail" required>
+    <textarea name="mensagem" rows="5" placeholder="Digite sua mensagem" required></textarea>
+    <button type="submit">Enviar</button>
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://www.instagram.com/skankhunt_4200_00/">
+  </form>
+
+  <div class="back-link">
+    <a href="index.html">← Voltar para o início</a>
+  </div>
+
 </body>
 </html>
