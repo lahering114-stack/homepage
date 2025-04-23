@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog do Cão Roludo</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" />
   <style>
     body {
       margin: 0;
@@ -19,7 +20,13 @@
     }
 
     h1 {
-      font-size: 28px;
+      font-size: 32px;
+      margin-bottom: 5px;
+    }
+
+    p.descricao {
+      font-size: 16px;
+      color: #aaa;
     }
 
     main {
@@ -33,26 +40,39 @@
     }
 
     ul.post-lista li {
-      margin-bottom: 16px;
-      font-size: 18px;
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease, background-color 0.3s;
+    }
+
+    ul.post-lista li:hover {
+      transform: translateY(-4px);
+      background-color: #2c2c2c;
     }
 
     ul.post-lista a {
       color: #61dafb;
+      font-size: 18px;
+      font-weight: bold;
       text-decoration: none;
+      display: block;
+      margin-bottom: 5px;
     }
 
     .data {
       font-size: 12px;
-      color: #aaa;
-      margin-left: 10px;
+      color: #999;
     }
 
     .voltar {
-      display: inline-block;
-      margin-top: 40px;
+      display: block;
+      margin: 40px auto 0;
       color: #61dafb;
       text-decoration: none;
+      text-align: center;
     }
   </style>
 </head>
@@ -60,13 +80,23 @@
 
   <header>
     <h1>Blog do Cão Roludo 🐾</h1>
-    <p>Reflexões e pensamentos diários.</p>
+    <p class="descricao">Textos diários, reflexões e bobagens filosóficas caninas.</p>
   </header>
 
   <main>
     <ul class="post-lista">
-      <li><a href="posts/post1.html">🐾 Primeira postagem</a> <span class="data">22/04/2025</span></li>
-      <li><a href="posts/post2.html">🌙 Pensamentos noturnos</a> <span class="data">21/04/2025</span></li>
+      <li>
+        <a href="posts/post1.html">📓 Primeira postagem</a>
+        <span class="data">22/04/2025</span>
+      </li>
+      <li>
+        <a href="posts/post2.html">🌙 Pensamentos noturnos</a>
+        <span class="data">21/04/2025</span>
+      </li>
+      <li>
+        <a href="posts/post3.html">💡 Ideias aleatórias</a>
+        <span class="data">20/04/2025</span>
+      </li>
     </ul>
 
     <a class="voltar" href="index.html">← Voltar para o início</a>
