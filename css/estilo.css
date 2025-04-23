@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #121212;
+    color: #f5f5f5;
+    padding: 20px;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 28px;
+  }
+  
+  p.data {
+    font-size: 14px;
+    color: #999;
+  }
+  
+  main {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.6;
+  }
+  
+  ul.post-lista {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul.post-lista li {
+    margin-bottom: 16px;
+    font-size: 18px;
+  }
+  
+  ul.post-lista a {
+    color: #61dafb;
+    text-decoration: none;
+  }
+  
+  ul.post-lista .data {
+    font-size: 12px;
+    color: #aaa;
+    margin-left: 10px;
+  }
+  
+  .voltar {
+    display: inline-block;
+    margin-top: 40px;
+    color: #61dafb;
+    text-decoration: none;
+  }
