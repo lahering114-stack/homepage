@@ -81,10 +81,15 @@
 
     img {
       max-width: 100%;
+      max-height: 300px;
       height: auto;
-      margin-top: 20px;
+      display: block;
+      margin: 20px auto;
       border-radius: 12px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      cursor: zoom-in;
+      opacity: 0;
+      animation: aparecer 0.6s ease forwards;
     }
 
     footer {
@@ -125,6 +130,10 @@
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+
+    @keyframes aparecer {
+      to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -140,8 +149,8 @@
   </nav>
 
   <main>
-    <p>Este site tem tema escuro, animação e é 100% responsivo. 😎</p>
-    <img src="imagens/cachorro.png" alt="Cachorro bonito" />
+    <p>Este site tem tema escuro, imagem otimizada e responsividade total. 😎</p>
+    <img src="imagens/cachorro.png" alt="Cachorro bonito" loading="lazy" />
     <br>
     <button class="theme-toggle" onclick="alternarTema()">Alternar Tema 🌗</button>
   </main>
@@ -156,6 +165,18 @@
       const temaAtual = html.getAttribute("data-theme");
       html.setAttribute("data-theme", temaAtual === "light" ? "dark" : "light");
     }
+
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('click', () => {
+        if (img.style.transform === 'scale(2)') {
+          img.style.transform = 'scale(1)';
+          img.style.cursor = 'zoom-in';
+        } else {
+          img.style.transform = 'scale(2)';
+          img.style.cursor = 'zoom-out';
+        }
+      });
+    });
   </script>
 
 </body>
