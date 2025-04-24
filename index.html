@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prazer! Cão Roludo!</title>
+  <title>Bem-vindo ao Logfar</title>
   <style>
     :root {
       --bg-dark: #121212;
@@ -30,22 +30,21 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg);
+      background: url('https://source.unsplash.com/1920x1080/?warehouse,logistics') no-repeat center center fixed;
+      background-size: cover;
       color: var(--text);
     }
 
     header {
-      background-color: var(--header);
+      background-color: rgba(0, 0, 0, 0.75);
       color: var(--text);
       padding: 20px;
       text-align: center;
     }
 
-    /* NAVBAR ESTILOSA */
     .navbar {
-      background-color: var(--nav);
+      background-color: rgba(40, 44, 52, 0.9);
       padding: 12px 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       text-align: center;
     }
 
@@ -76,24 +75,23 @@
     }
 
     main {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 40px;
       text-align: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
       animation: fadeIn 0.8s ease;
     }
 
-    img {
-      max-width: 100%;
-      max-height: 400px;
-      height: auto;
-      display: block;
-      margin: 20px auto;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      cursor: zoom-in;
-      opacity: 0;
-      animation: aparecer 0.6s ease forwards;
+    main h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    main p {
+      font-size: 20px;
+      margin-bottom: 30px;
     }
 
     .theme-toggle {
@@ -115,17 +113,11 @@
       color: var(--link);
     }
 
-    /* ANIMAÇÕES */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes aparecer {
-      to { opacity: 1; }
-    }
-
-    /* WHATSAPP BUTTON */
     #whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -163,9 +155,8 @@
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Prazer! Cão Roludo!</h1>
+    <h1>Bem-vindo ao Logfar</h1>
   </header>
 
   <nav class="navbar">
@@ -177,14 +168,13 @@
   </nav>
 
   <main>
-    <p>Me conte, como você me achou? 😎</p>
-    <img src="imagens/cachorro.png" alt="Cachorro bonito" loading="lazy" />
-    <br>
+    <h1>Eficiência e Tecnologia em Logística</h1>
+    <p>Soluções modernas para gestão logística, conectando inovação e praticidade no seu dia a dia.</p>
     <button class="theme-toggle" onclick="alternarTema()">Alternar Tema 🌗</button>
   </main>
 
   <footer>
-    &copy; 2025 Cebosão. Todos os direitos reservados.
+    &copy; 2025 Logfar. Todos os direitos reservados.
   </footer>
 
   <script>
@@ -193,23 +183,10 @@
       const temaAtual = html.getAttribute("data-theme");
       html.setAttribute("data-theme", temaAtual === "light" ? "dark" : "light");
     }
-
-    document.querySelectorAll('img').forEach(img => {
-      img.addEventListener('click', () => {
-        if (img.style.transform === 'scale(2)') {
-          img.style.transform = 'scale(1)';
-          img.style.cursor = 'zoom-in';
-        } else {
-          img.style.transform = 'scale(2)';
-          img.style.cursor = 'zoom-out';
-        }
-      });
-    });
   </script>
 
-  <a href="https://wa.me/5547991892577?text=Olá!%20Acessei%20seu%20site%20e%20quero%20falar%20com%20você" target="_blank" id="whatsapp-float">
+  <a href="https://wa.me/5547991892577?text=Olá!%20Acessei%20seu%20site%20e%20quero%20falar%20com%20voc%C3%AA" target="_blank" id="whatsapp-float">
     💬
   </a>
-
 </body>
 </html>
