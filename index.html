@@ -26,7 +26,7 @@
     td {
       position: relative;
       padding: 20px;
-      padding-bottom: 70px;
+      padding-bottom: 90px;
     }
 
     h1, h2 {
@@ -105,6 +105,19 @@
       z-index: 10;
     }
 
+    .audio-button {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: lime;
+      color: black;
+      border: 2px solid yellow;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
     footer {
       text-align: center;
       color: gray;
@@ -114,18 +127,11 @@
     }
 
     @media (max-width: 600px) {
-      h1 {
-        font-size: 20px;
-      }
-      h2 {
-        font-size: 16px;
-      }
-      .ip-box {
-        font-size: 16px;
-      }
-      .corner-baby {
-        width: 60px;
-      }
+      h1 { font-size: 20px; }
+      h2 { font-size: 16px; }
+      .ip-box { font-size: 16px; }
+      .corner-baby { width: 60px; }
+      .audio-button { font-size: 14px; padding: 8px 16px; }
     }
   </style>
 </head>
@@ -152,7 +158,18 @@
           <a href="contato.html">Contato</a>
         </div>
 
+        <!-- GIF do Dancing Baby -->
         <img src="IMG_1611.GIF" alt="Dancing Baby" class="corner-baby">
+
+        <!-- Botão de som -->
+        <button class="audio-button" id="play-audio">🔊 Ativar som</button>
+
+        <!-- Áudio de latido -->
+        <audio id="dog-audio" loop>
+          <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_799b9fb50c.mp3?filename=dog-barking-38536.mp3" type="audio/mpeg">
+          Seu navegador não suporta áudio.
+        </audio>
+
       </td>
     </tr>
   </table>
@@ -162,6 +179,7 @@
   </footer>
 
   <script>
+    // Exibir IP
     fetch("https://api.ipify.org?format=json")
       .then((response) => response.json())
       .then((data) => {
@@ -170,6 +188,12 @@
       .catch(() => {
         document.getElementById("ip-address").textContent = "Erro ao obter IP";
       });
+
+    // Reproduzir áudio ao clicar no botão
+    document.getElementById('play-audio').addEventListener('click', function () {
+      const audio = document.getElementById('dog-audio');
+      audio.play().catch(() => alert("Navegador bloqueou a reprodução automática. Tente clicar novamente."));
+    });
   </script>
 
 </body>
