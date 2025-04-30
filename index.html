@@ -158,18 +158,17 @@
           <a href="contato.html">Contato</a>
         </div>
 
-        <!-- GIF do Dancing Baby -->
+        <!-- Dancing Baby -->
         <img src="IMG_1611.GIF" alt="Dancing Baby" class="corner-baby">
 
         <!-- Botão de som -->
         <button class="audio-button" id="play-audio">🔊 Ativar som</button>
 
-        <!-- Áudio de latido -->
+        <!-- Áudio confiável -->
         <audio id="dog-audio" loop>
-          <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_799b9fb50c.mp3?filename=dog-barking-38536.mp3" type="audio/mpeg">
+          <source src="https://upload.wikimedia.org/wikipedia/commons/8/88/Dog_bark.ogg" type="audio/ogg">
           Seu navegador não suporta áudio.
         </audio>
-
       </td>
     </tr>
   </table>
@@ -179,7 +178,7 @@
   </footer>
 
   <script>
-    // Exibir IP
+    // Mostrar IP do visitante
     fetch("https://api.ipify.org?format=json")
       .then((response) => response.json())
       .then((data) => {
@@ -189,10 +188,13 @@
         document.getElementById("ip-address").textContent = "Erro ao obter IP";
       });
 
-    // Reproduzir áudio ao clicar no botão
+    // Tocar áudio ao clicar no botão
     document.getElementById('play-audio').addEventListener('click', function () {
       const audio = document.getElementById('dog-audio');
-      audio.play().catch(() => alert("Navegador bloqueou a reprodução automática. Tente clicar novamente."));
+      audio.play().catch(err => {
+        alert("O navegador bloqueou a reprodução automática. Tente clicar novamente.");
+        console.error(err);
+      });
     });
   </script>
 
