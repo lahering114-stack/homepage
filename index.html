@@ -49,7 +49,6 @@
       font-size: 18px;
       border: 2px dashed cyan;
       text-align: center;
-      line-height: 1.6;
     }
 
     .blinking {
@@ -105,8 +104,7 @@
         <h2>Me conte, como você me achou? 😎</h2>
 
         <div class="ip-box" id="ip-container">
-          Seu IP: <span id="ip-address" class="blinking">Carregando...</span><br>
-          Localização: <span id="location">Buscando localização...</span>
+          Seu IP: <span id="ip-address" class="blinking">Carregando...</span>
         </div>
 
         <img src="imagens/cachorro.png" alt="Cachorro bonito" class="main-img" id="dog-image" />
@@ -127,15 +125,13 @@
   </center>
 
   <script>
-    fetch("https://ipinfo.io/json?token=23e90f3c80e3cc")
+    fetch("https://api.ipify.org?format=json")
       .then((response) => response.json())
       .then((data) => {
         document.getElementById("ip-address").textContent = data.ip;
-        document.getElementById("location").textContent = `${data.city}, ${data.region} - ${data.country}`;
       })
       .catch(() => {
         document.getElementById("ip-address").textContent = "Erro ao obter IP";
-        document.getElementById("location").textContent = "Erro ao obter localização";
       });
   </script>
 
