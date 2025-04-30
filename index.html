@@ -74,13 +74,12 @@
       border: 4px solid lime;
       border-radius: 8px;
       box-shadow: 0 0 20px green;
-      animation: rotateDog 5s linear infinite;
+      transition: transform 0.6s ease-in-out;
       cursor: pointer;
     }
 
-    @keyframes rotateDog {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(360deg); }
+    img.main-img:hover {
+      transform: rotate(720deg) scale(1.2);
     }
   </style>
 </head>
@@ -99,7 +98,7 @@
           Seu IP: <span id="ip-address" class="blinking">Carregando...</span>
         </div>
 
-        <img src="imagens/cachorro.png" alt="Cachorro bonito" class="main-img" id="dog-image" />
+        <img src="imagens/cachorro.png" alt="Cachorro bonito" class="main-img" />
 
         <div class="nav-links">
           <a href="index.html">Início</a> |
@@ -118,14 +117,7 @@
     <p style="color: gray;">&copy; 1996 Cebosão Web Productions. Todos os direitos reservados.</p>
   </center>
 
-  <!-- Som de latido -->
-  <audio id="latido">
-    <source src="https://www.fesliyanstudios.com/play-mp3/6877" type="audio/mpeg">
-    Seu navegador não suporta áudio.
-  </audio>
-
   <script>
-    // IP do visitante
     fetch('https://api.ipify.org?format=json')
       .then(res => res.json())
       .then(data => {
@@ -134,11 +126,6 @@
       .catch(() => {
         document.getElementById('ip-address').textContent = "Erro ao carregar IP";
       });
-
-    // Som de latido ao clicar na imagem
-    document.getElementById('dog-image').addEventListener('click', function() {
-      document.getElementById('latido').play();
-    });
   </script>
 
 </body>
