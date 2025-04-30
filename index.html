@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <title>Prazer! Cão Roludo!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="https://emoji.gg/assets/emoji/7293-doge.png" type="image/png">
   <style>
     body {
+      margin: 0;
       background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
       background-color: black;
       color: lime;
@@ -14,19 +16,23 @@
 
     table {
       margin: 40px auto;
-      width: 90%;
+      width: 95%;
+      max-width: 900px;
       border: 3px double yellow;
       background-color: #000033;
+      border-collapse: collapse;
     }
 
     td {
       position: relative;
-      padding-bottom: 60px;
+      padding: 20px;
+      padding-bottom: 70px;
     }
 
     h1, h2 {
       text-align: center;
       color: cyan;
+      margin: 0.5em 0;
     }
 
     marquee {
@@ -49,6 +55,8 @@
       font-size: 18px;
       border: 2px dashed cyan;
       text-align: center;
+      line-height: 1.6;
+      word-wrap: break-word;
     }
 
     .blinking {
@@ -64,6 +72,11 @@
     .nav-links {
       text-align: center;
       margin-top: 20px;
+    }
+
+    .nav-links a {
+      display: inline-block;
+      margin: 6px 10px;
     }
 
     img.main-img {
@@ -87,8 +100,32 @@
       position: absolute;
       bottom: 10px;
       left: 10px;
-      width: 100px;
+      width: 80px;
+      max-width: 20vw;
       z-index: 10;
+    }
+
+    footer {
+      text-align: center;
+      color: gray;
+      font-size: 14px;
+      margin-top: 30px;
+      padding: 10px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 20px;
+      }
+      h2 {
+        font-size: 16px;
+      }
+      .ip-box {
+        font-size: 16px;
+      }
+      .corner-baby {
+        width: 60px;
+      }
     }
   </style>
 </head>
@@ -110,8 +147,8 @@
         <img src="imagens/cachorro.png" alt="Cachorro bonito" class="main-img" id="dog-image" />
 
         <div class="nav-links">
-          <a href="index.html">Início</a> |
-          <a href="sobre.html">Sobre</a> |
+          <a href="index.html">Início</a>
+          <a href="sobre.html">Sobre</a>
           <a href="contato.html">Contato</a>
         </div>
 
@@ -120,9 +157,9 @@
     </tr>
   </table>
 
-  <center>
-    <p style="color: gray;">&copy; 1996 Cebosão Web Productions. Todos os direitos reservados.</p>
-  </center>
+  <footer>
+    &copy; 1996 Cebosão Web Productions. Todos os direitos reservados.
+  </footer>
 
   <script>
     fetch("https://api.ipify.org?format=json")
