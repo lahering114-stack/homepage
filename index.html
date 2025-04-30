@@ -81,6 +81,19 @@
     img.main-img:hover {
       transform: rotate(720deg) scale(1.2);
     }
+
+    .bark-button {
+      display: block;
+      margin: 10px auto;
+      background: red;
+      color: yellow;
+      font-weight: bold;
+      border: 2px solid yellow;
+      padding: 8px 16px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
@@ -99,6 +112,7 @@
         </div>
 
         <img src="imagens/cachorro.png" alt="Cachorro bonito" class="main-img" id="dog-image" />
+        <button class="bark-button" onclick="latir()">🐶 Latir!</button>
 
         <div class="nav-links">
           <a href="index.html">Início</a> |
@@ -113,19 +127,13 @@
     </tr>
   </table>
 
-  <!-- Contador de visitas -->
-  <div style="text-align: center; margin: 30px auto;">
-    <p style="color: cyan;">Você é o visitante número:</p>
-    <img src="https://www.webfreecounter.com/hit.php?id=gepxnpck&nd=6&style=71" alt="Contador de Visitas">
-  </div>
-
   <center>
     <p style="color: gray;">&copy; 1996 Cebosão Web Productions. Todos os direitos reservados.</p>
   </center>
 
-  <!-- Som de latido (CORS liberado) -->
+  <!-- Som de latido -->
   <audio id="latido" preload="auto">
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_799b9fb50c.mp3?filename=dog-barking-38536.mp3" type="audio/mpeg">
+    <source src="https://cdn.jsdelivr.net/gh/jwilber/Latidos/cachorro1.mp3" type="audio/mpeg">
     Seu navegador não suporta áudio.
   </audio>
 
@@ -140,12 +148,15 @@
         document.getElementById('ip-address').textContent = "Erro ao carregar IP";
       });
 
-    // Reproduzir latido ao clicar na imagem
-    document.getElementById('dog-image').addEventListener('click', function () {
+    // Reproduzir latido
+    function latir() {
       const audio = document.getElementById('latido');
       audio.currentTime = 0;
       audio.play();
-    });
+    }
+
+    // Também ativa o latido ao clicar na imagem
+    document.getElementById('dog-image').addEventListener('click', latir);
   </script>
 
 </body>
