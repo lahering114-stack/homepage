@@ -12,6 +12,7 @@
       background-color: black;
       color: lime;
       font-family: "Courier New", Courier, monospace;
+      cursor: url('https://cur.cursors-4u.net/cursors/cur-11/cur1083.cur'), auto; /* Cursor personalizado retrô */
     }
 
     table {
@@ -33,6 +34,7 @@
       text-align: center;
       color: cyan;
       margin: 0.5em 0;
+      text-shadow: 2px 2px #ff00ff; /* Sombra neon típica dos anos 90 */
     }
 
     marquee {
@@ -45,6 +47,10 @@
       color: yellow;
       text-decoration: underline;
       font-weight: bold;
+    }
+
+    a:hover {
+      color: hotpink; /* Cor vibrante ao passar o mouse */
     }
 
     .ip-box {
@@ -77,6 +83,15 @@
     .nav-links a {
       display: inline-block;
       margin: 6px 10px;
+      padding: 5px 10px;
+      background: linear-gradient(45deg, #ff00ff, #00ffff); /* Gradiente vibrante */
+      border: 2px outset yellow; /* Estilo 3D */
+      border-radius: 3px;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      border: 2px inset yellow; /* Efeito de "clique" */
     }
 
     img.main-img {
@@ -116,6 +131,31 @@
       border-radius: 5px;
       cursor: pointer;
       font-weight: bold;
+      box-shadow: 3px 3px 0 #ff00ff; /* Sombra colorida */
+    }
+
+    .audio-button:hover {
+      background-color: yellow;
+      color: navy;
+    }
+
+    .visitor-counter {
+      text-align: center;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: black;
+      color: red;
+      font-family: "Arial Black", Gadget, sans-serif;
+      font-size: 20px;
+      border: 2px solid yellow;
+      width: 200px;
+    }
+
+    .animated-gif {
+      display: block;
+      margin: 20px auto;
+      width: 100px;
+      border: 2px solid cyan;
     }
 
     footer {
@@ -126,12 +166,24 @@
       padding: 10px;
     }
 
+    /* Efeito "under construction" */
+    .construction {
+      text-align: center;
+      margin: 10px auto;
+    }
+
+    .construction img {
+      width: 100px;
+    }
+
     @media (max-width: 600px) {
       h1 { font-size: 20px; }
       h2 { font-size: 16px; }
       .ip-box { font-size: 16px; }
       .corner-baby { width: 60px; }
       .audio-button { font-size: 14px; padding: 8px 16px; }
+      .visitor-counter { font-size: 16px; width: 150px; }
+      .animated-gif { width: 80px; }
     }
   </style>
 </head>
@@ -146,16 +198,30 @@
 
         <h2>Me conte, como você me achou? 😎</h2>
 
+        <!-- Contador de visitas -->
+        <div class="visitor-counter">
+          Visitantes: <span id="visitor-count" class="blinking">000001</span>
+        </div>
+
         <div class="ip-box" id="ip-container">
           Seu IP: <span id="ip-address" class="blinking">Carregando...</span>
         </div>
 
         <img src="imagens/cachorro.png" alt="Cachorro bonito" class="main-img" id="dog-image" />
 
+        <!-- GIF animado retrô -->
+        <img src="https://media.giphy.com/media/3o6gDS6cxuW7b6J3G/giphy.gif" alt="Animated Flame" class="animated-gif">
+
         <div class="nav-links">
           <a href="index.html">Início</a>
           <a href="sobre.html">Sobre</a>
           <a href="contato.html">Contato</a>
+          <a href="guestbook.html">Livro de Visitas</a> <!-- Livro de visitas, clássico dos anos 90 -->
+        </div>
+
+        <!-- Ícone "Under Construction" -->
+        <div class="construction">
+          <img src="https://www.animatedimages.org/data/media/133/animated-construction-image-0018.gif" alt="Under Construction">
         </div>
 
         <!-- Dancing Baby -->
@@ -174,7 +240,9 @@
   </table>
 
   <footer>
-    &copy; 1996 Cebosão Web Productions. Todos os direitos reservados.
+    © 1996 Cebosão Web Productions. Todos os direitos reservados.
+    <br>
+    <a href="mailto:cao.roludo@geocities.com">Email: cao.roludo@geocities.com</a> <!-- Email estilo GeoCities -->
   </footer>
 
   <script>
@@ -187,6 +255,11 @@
       .catch(() => {
         document.getElementById("ip-address").textContent = "Erro ao obter IP";
       });
+
+    // Simular contador de visitas (estático para exemplo)
+    document.getElementById('visitor-count').textContent = Math.floor(Math.random() * 10000)
+      .toString()
+      .padStart(6, '0');
 
     // Tocar áudio ao clicar no botão
     document.getElementById('play-audio').addEventListener('click', function () {
