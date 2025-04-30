@@ -1,222 +1,125 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Prazer! Cão Roludo!</title>
   <style>
-    :root {
-      --bg-dark: #121212;
-      --text-dark: #f5f5f5;
-      --header-dark: #1f1f1f;
-      --link-dark: #f5f5f5;
-      --nav-dark: #282c34;
-      --accent: #61dafb;
-    }
-
-    [data-theme="dark"] {
-      --bg: var(--bg-dark);
-      --text: var(--text-dark);
-      --header: var(--header-dark);
-      --link: var(--link-dark);
-      --nav: var(--nav-dark);
-    }
-
-    * {
-      box-sizing: border-box;
-      transition: background 0.3s, color 0.3s;
-    }
-
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+      background-color: black;
+      color: lime;
+      font-family: "Courier New", Courier, monospace;
     }
 
-    header {
-      background-color: var(--header);
-      color: var(--text);
-      padding: 20px;
-      text-align: center;
-    }
-
-    .navbar {
-      background-color: var(--nav);
-      padding: 12px 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      text-align: center;
-    }
-
-    .navbar ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .navbar li {
-      display: inline-block;
-      margin: 0 15px;
-    }
-
-    .navbar a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-      padding: 8px 14px;
-      border-radius: 6px;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .navbar a:hover {
-      background-color: var(--accent);
-      color: var(--bg);
-    }
-
-    main {
-      max-width: 800px;
+    table {
       margin: 40px auto;
-      padding: 0 20px;
-      text-align: center;
-      animation: fadeIn 0.8s ease;
+      width: 90%;
+      border: 3px double yellow;
+      background-color: #000033;
     }
 
-    img {
+    h1, h2 {
+      text-align: center;
+      color: cyan;
+    }
+
+    marquee {
+      color: red;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    a {
+      color: yellow;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .gif {
+      display: block;
+      margin: 10px auto;
+    }
+
+    .ip-box {
+      margin-top: 20px;
+      background-color: navy;
+      color: white;
+      padding: 10px;
+      font-size: 18px;
+      border: 2px dashed cyan;
+      text-align: center;
+    }
+
+    .blinking {
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .nav-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    img.main-img {
       max-width: 100%;
-      max-height: 400px;
       height: auto;
       display: block;
       margin: 20px auto;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      cursor: zoom-in;
-      opacity: 0;
-      animation: aparecer 0.6s ease forwards;
-    }
-
-    .theme-toggle {
-      margin-top: 20px;
-      background: none;
-      border: 2px solid var(--accent);
-      padding: 8px 16px;
-      color: var(--accent);
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-
-    footer {
-      margin-top: 60px;
-      padding: 20px;
-      text-align: center;
-      background-color: var(--nav);
-      color: var(--link);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes aparecer {
-      to { opacity: 1; }
-    }
-
-    #whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      font-size: 24px;
-      text-align: center;
-      border-radius: 50%;
-      padding: 12px 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      text-decoration: none;
-      z-index: 9999;
-      transition: transform 0.3s ease;
-    }
-
-    #whatsapp-float:hover {
-      transform: scale(1.1);
-    }
-
-    @media (max-width: 600px) {
-      .navbar li {
-        display: block;
-        margin: 10px 0;
-      }
-
-      header h1 {
-        font-size: 24px;
-      }
-
-      main p {
-        font-size: 16px;
-      }
+      border: 4px solid lime;
+      border-radius: 8px;
+      box-shadow: 0 0 20px green;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Prazer! Cão Roludo!</h1>
-  </header>
+  <marquee behavior="alternate">💾 Bem-vindo à Página Oficial do Cão Roludo! 🐶</marquee>
 
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Início</a></li>
-      <li><a href="sobre.html">Sobre</a></li>
-      <li><a href="contato.html">Contato</a></li>
-    </ul>
-  </nav>
+  <table>
+    <tr>
+      <td>
+        <h1>Prazer! Cão Roludo!</h1>
 
-  <main>
-    <p>Me conte, como você me achou? 😎</p>
-    <p>Seu IP: <span id="ip-address">Carregando...</span></p>
-    <img src="imagens/cachorro.png" alt="Cachorro bonito" loading="lazy" />
-    <br>
-    <button class="theme-toggle" onclick="alternarTema()">Alternar Tema 🌗</button>
-  </main>
+        <h2>Me conte, como você me achou? 😎</h2>
 
-  <footer>
-    &copy; 2025 Cebosão. Todos os direitos reservados.
-  </footer>
+        <div class="ip-box" id="ip-container">
+          Seu IP: <span id="ip-address" class="blinking">Carregando...</span>
+        </div>
+
+        <img src="imagens/cachorro.png" alt="Cachorro bonito" class="main-img" />
+
+        <div class="nav-links">
+          <a href="index.html">Início</a> |
+          <a href="sobre.html">Sobre</a> |
+          <a href="contato.html">Contato</a>
+        </div>
+
+        <center>
+          <img src="https://www.animatedimages.org/data/media/71/animated-under-construction-image-0001.gif" class="gif" alt="Em construção">
+        </center>
+      </td>
+    </tr>
+  </table>
+
+  <center>
+    <p style="color: gray;">&copy; 1996 Cebosão Web Productions. Todos os direitos reservados.</p>
+  </center>
 
   <script>
-    function alternarTema() {
-      const html = document.documentElement;
-      const temaAtual = html.getAttribute("data-theme");
-      html.setAttribute("data-theme", temaAtual === "light" ? "dark" : "light");
-    }
-
-    document.querySelectorAll('img').forEach(img => {
-      img.addEventListener('click', () => {
-        if (img.style.transform === 'scale(2)') {
-          img.style.transform = 'scale(1)';
-          img.style.cursor = 'zoom-in';
-        } else {
-          img.style.transform = 'scale(2)';
-          img.style.cursor = 'zoom-out';
-        }
-      });
-    });
-
     fetch('https://api.ipify.org?format=json')
-      .then(response => response.json())
+      .then(res => res.json())
       .then(data => {
         document.getElementById('ip-address').textContent = data.ip;
       })
       .catch(() => {
-        document.getElementById('ip-address').textContent = 'Erro ao obter IP';
+        document.getElementById('ip-address').textContent = "Erro ao carregar IP";
       });
   </script>
-
-  <a href="https://wa.me/5547991892577?text=Olá!%20Acessei%20seu%20site%20e%20quero%20falar%20com%20você" target="_blank" id="whatsapp-float">
-    💬
-  </a>
 
 </body>
 </html>
