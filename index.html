@@ -98,7 +98,7 @@
           Seu IP: <span id="ip-address" class="blinking">Carregando...</span>
         </div>
 
-        <img src="imagens/cachorro.png" alt="Cachorro bonito" class="main-img" />
+        <img src="imagens/cachorro.png" alt="Cachorro bonito" class="main-img" id="dog-image" />
 
         <div class="nav-links">
           <a href="index.html">Início</a> |
@@ -117,7 +117,14 @@
     <p style="color: gray;">&copy; 1996 Cebosão Web Productions. Todos os direitos reservados.</p>
   </center>
 
+  <!-- Som de latido -->
+  <audio id="latido">
+    <source src="https://www.fesliyanstudios.com/play-mp3/6877" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
   <script>
+    // Mostrar IP
     fetch('https://api.ipify.org?format=json')
       .then(res => res.json())
       .then(data => {
@@ -126,6 +133,13 @@
       .catch(() => {
         document.getElementById('ip-address').textContent = "Erro ao carregar IP";
       });
+
+    // Latido ao clicar na imagem
+    document.getElementById('dog-image').addEventListener('click', function() {
+      const audio = document.getElementById('latido');
+      audio.currentTime = 0;
+      audio.play();
+    });
   </script>
 
 </body>
