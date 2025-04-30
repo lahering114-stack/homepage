@@ -127,16 +127,15 @@
   </center>
 
   <script>
-    // Obter IP e localização
-    fetch('http://ip-api.com/json/')
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById('ip-address').textContent = data.query;
-        document.getElementById('location').textContent = `${data.city}, ${data.regionName} - ${data.country}`;
+    fetch("https://ipinfo.io/json?token=23e90f3c80e3cc")
+      .then((response) => response.json())
+      .then((data) => {
+        document.getElementById("ip-address").textContent = data.ip;
+        document.getElementById("location").textContent = `${data.city}, ${data.region} - ${data.country}`;
       })
       .catch(() => {
-        document.getElementById('ip-address').textContent = "Erro";
-        document.getElementById('location').textContent = "Não foi possível obter localização.";
+        document.getElementById("ip-address").textContent = "Erro ao obter IP";
+        document.getElementById("location").textContent = "Erro ao obter localização";
       });
   </script>
 
