@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Prazer! Cão Roludo!</title>
-  <!-- Favicon icônico (doge clássico) -->
   <link rel="icon" href="https://emoji.gg/assets/emoji/7293-doge.png" type="image/png">
   <style>
     body {
@@ -21,8 +20,8 @@
     }
 
     td {
-      position: relative; /* necessário para posicionar o baby dentro */
-      padding-bottom: 60px; /* espaço extra para não sobrepor conteúdo */
+      position: relative;
+      padding-bottom: 60px;
     }
 
     h1, h2 {
@@ -50,6 +49,7 @@
       font-size: 18px;
       border: 2px dashed cyan;
       text-align: center;
+      line-height: 1.6;
     }
 
     .blinking {
@@ -84,7 +84,6 @@
       transform: rotate(720deg) scale(1.2);
     }
 
-    /* Dancing Baby dentro do retângulo */
     .corner-baby {
       position: absolute;
       bottom: 10px;
@@ -106,7 +105,8 @@
         <h2>Me conte, como você me achou? 😎</h2>
 
         <div class="ip-box" id="ip-container">
-          Seu IP: <span id="ip-address" class="blinking">Carregando...</span>
+          Seu IP: <span id="ip-address" class="blinking">Carregando...</span><br>
+          Localização: <span id="location">Buscando localização...</span>
         </div>
 
         <img src="imagens/cachorro.png" alt="Cachorro bonito" class="main-img" id="dog-image" />
@@ -117,7 +117,6 @@
           <a href="contato.html">Contato</a>
         </div>
 
-        <!-- Dancing Baby DENTRO do retângulo, no canto inferior esquerdo -->
         <img src="IMG_1611.GIF" alt="Dancing Baby" class="corner-baby">
       </td>
     </tr>
@@ -128,14 +127,16 @@
   </center>
 
   <script>
-    // Mostrar IP do visitante
-    fetch('https://api.ipify.org?format=json')
+    // Obter IP e localização
+    fetch('http://ip-api.com/json/')
       .then(res => res.json())
       .then(data => {
-        document.getElementById('ip-address').textContent = data.ip;
+        document.getElementById('ip-address').textContent = data.query;
+        document.getElementById('location').textContent = `${data.city}, ${data.regionName} - ${data.country}`;
       })
       .catch(() => {
-        document.getElementById('ip-address').textContent = "Erro ao carregar IP";
+        document.getElementById('ip-address').textContent = "Erro";
+        document.getElementById('location').textContent = "Não foi possível obter localização.";
       });
   </script>
 
