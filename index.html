@@ -113,7 +113,7 @@
     </tr>
   </table>
 
-  <!-- Contador de visitas fake -->
+  <!-- Contador de visitas -->
   <div style="text-align: center; margin: 30px auto;">
     <p style="color: cyan;">Você é o visitante número:</p>
     <img src="https://www.webfreecounter.com/hit.php?id=gepxnpck&nd=6&style=71" alt="Contador de Visitas">
@@ -124,13 +124,13 @@
   </center>
 
   <!-- Som de latido -->
-  <audio id="latido">
-    <source src="https://www.fesliyanstudios.com/play-mp3/6877" type="audio/mpeg">
+  <audio id="latido" preload="auto">
+    <source src="https://www.soundjay.com/animal/dog-bark-1.mp3" type="audio/mpeg">
     Seu navegador não suporta áudio.
   </audio>
 
   <script>
-    // Mostrar IP
+    // Mostrar IP do visitante
     fetch('https://api.ipify.org?format=json')
       .then(res => res.json())
       .then(data => {
@@ -140,8 +140,8 @@
         document.getElementById('ip-address').textContent = "Erro ao carregar IP";
       });
 
-    // Latido ao clicar na imagem
-    document.getElementById('dog-image').addEventListener('click', function() {
+    // Reproduzir latido ao clicar na imagem
+    document.getElementById('dog-image').addEventListener('click', function () {
       const audio = document.getElementById('latido');
       audio.currentTime = 0;
       audio.play();
