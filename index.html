@@ -6,8 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="https://emoji.gg/assets/emoji/7293-doge.png" type="image/png">
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      max-width: 100%;
+      overflow-x: hidden;
       background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
       background-color: black;
       color: lime;
@@ -17,11 +20,12 @@
 
     table {
       margin: 40px auto;
-      width: 95%;
+      width: 100%;
       max-width: 900px;
       border: 3px double yellow;
       background-color: #000033;
       border-collapse: collapse;
+      box-sizing: border-box;
     }
 
     td {
@@ -38,6 +42,10 @@
     }
 
     marquee {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
       color: red;
       font-size: 24px;
       font-weight: bold;
@@ -65,15 +73,10 @@
       word-wrap: break-word;
     }
 
-    @keyframes blink {
-      0% { opacity: 1; }
-      50% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
     .nav-links {
       text-align: center;
       margin-top: 20px;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
@@ -112,7 +115,8 @@
       bottom: 10px;
       left: 10px;
       width: 80px;
-      max-width: 20vw;
+      max-width: 100px;
+      height: auto;
       z-index: 10;
     }
 
@@ -162,14 +166,20 @@
       padding: 10px;
     }
 
+    /* RESPONSIVIDADE */
     @media (max-width: 600px) {
       h1 { font-size: 20px; }
       h2 { font-size: 16px; }
-      .ip-box { font-size: 16px; }
+      .ip-box { font-size: 16px; padding: 8px; }
       .corner-baby { width: 60px; }
       .audio-button { font-size: 14px; padding: 8px 16px; }
       .visitor-counter { font-size: 16px; width: 150px; }
       .animated-gif { width: 80px; }
+      .nav-links a {
+        font-size: 14px;
+        padding: 6px 8px;
+        margin: 5px 4px;
+      }
     }
   </style>
 </head>
@@ -180,6 +190,7 @@
   <table>
     <tr>
       <td>
+
         <!-- Contador de visitas -->
         <div class="visitor-counter">
           otários: <span id="visitor-count">000001</span>
@@ -192,6 +203,7 @@
 
         <img src="imagens/cachorro.png" alt="Cachorro bonito" class="main-img" id="dog-image" />
 
+        <!-- Links -->
         <div class="nav-links">
           <a href="index.html">Início</a>
           <a href="sobre.html">Sobre</a>
